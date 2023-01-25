@@ -1,4 +1,29 @@
 {
-  "components": ["CounterComponent"],
-  "systems": [{ "name": "IncrementSystem", "writeAccess": ["CounterComponent"] }]
+  "components": [
+    "IndexerComponent",
+    "PositionComponent",
+    "ColorComponent"
+  ],
+  "systems": [
+    {
+      "name": "InitSystem",
+      "writeAccess": [
+        "IndexerComponent",
+        "PositionComponent"
+      ]
+    },
+    {
+      "name": "PaintSystem",
+      "writeAccess": [
+        "PositionComponent",
+        "ColorComponent"
+      ]
+    },
+    {
+      "name": "PaintRectSystem",
+      "writeAccess": [
+        "ColorComponent"
+      ]
+    }
+  ]
 }

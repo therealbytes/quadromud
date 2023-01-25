@@ -7,3 +7,5 @@ memmove/=../../node_modules/memmove/src/
 ds-test/=../../node_modules/ds-test/src/
 solmate/=../../node_modules/@rari-capital/solmate/src/
 forge-std/=../../node_modules/forge-std/src/
+quadromud/=../../node_modules/quadromud/src/
+quadrosol/=../../node_modules/quadrosol/src/

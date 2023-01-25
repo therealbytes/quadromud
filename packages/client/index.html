@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>a minimal MUD client</title>
   </head>
-  <body>
+  <body style="background-color: #B8B8B8; margin: 10px">
     <script type="module" src="/src/index.ts"></script>
-    <div>Counter: <span id="counter">0</span></div>
-    <button onclick="window.increment()">Increment</button>
+    <canvas
+      id="canvas"
+      style="background-color: white; border: 1px solid #808080"
+      width="100px"
+      height="100px"
+      oncontextmenu="javascript:return false;"
+    ></canvas>
   </body>
 </html>
