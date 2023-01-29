@@ -4,8 +4,7 @@ pragma solidity >=0.8.0;
 import "solecs/System.sol";
 import "solecs/utils.sol";
 
-// import { CoordComponent } from "quadromud/CoordComponent.sol";
-import { Component, Coord, CoordRect, CoordIndexer } from "quadromud/CoordIndexer.sol";
+import { Component, Point, Rect, CoordIndexer } from "quadromud/CoordIndexer.sol";
 import { ID as PositionComponentID } from "components/PositionComponent.sol";
 import { IndexerComponent, ID as IndexerComponentID } from "components/IndexerComponent.sol";
 
@@ -17,7 +16,7 @@ contract InitSystem is System {
   constructor(IWorld _world, address _components) System(_world, _components) {}
 
   function execute(bytes memory arguments) public returns (bytes memory) {
-    CoordRect memory rect = CoordRect(Coord(0, 0), Coord(WIDTH, HEIGHT));
+    Rect memory rect = Rect(Point(0, 0), Point(WIDTH, HEIGHT));
     registerCoordIndexer(PositionComponentID, rect);
   }
 
@@ -25,16 +24,16 @@ contract InitSystem is System {
     return execute(new bytes(0));
   }
 
-  function registerCoordIndexer(uint256 component, CoordRect memory rect) internal {
+  function registerCoordIndexer(uint256 component, Rect memory rect) internal {
     // Get components
     Component coordComponent = Component(getAddressById(components, component));
     IndexerComponent indexerComponent = IndexerComponent(getAddressById(components, IndexerComponentID));
     // Check requirements
     require(!indexerComponent.has(component), "Indexer already set");
     // Create indexer
-    CoordIndexer indexer = new CoordIndexer(coordComponent, rect);
+    address indexerAddr = address(new CoordIndexer(coordComponent, rect));
     // Register indexer
-    coordComponent.registerIndexer(address(indexer));
-    indexerComponent.set(component, address(indexer));
+    coordComponent.registerIndexer(indexerAddr);
+    indexerComponent.set(component, indexerAddr);
   }
 }

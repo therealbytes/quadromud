@@ -6,8 +6,7 @@ import "std-contracts/test/MudTest.t.sol";
 
 import { WIDTH, HEIGHT } from "../../constants.sol";
 
-// TODO: unify coord struct [?]
-import { Coord, CoordRect } from "quadromud/CoordIndexer.sol";
+import { Point, Rect } from "quadromud/CoordIndexer.sol";
 
 import { InitSystem, ID as InitSystemID } from "systems/InitSystem.sol";
 import { PaintSystem, ID as PaintSystemID } from "systems/PaintSystem.sol";
@@ -26,10 +25,10 @@ contract PaintRectSystemTest is MudTest {
   function testPaintRect() public {
     InitSystem(system(InitSystemID)).executeTyped();
 
-    CoordRect memory indexRect = CoordRect(Coord(0, 0), Coord(WIDTH, HEIGHT));
+    Rect memory indexRect = Rect(Point(0, 0), Point(WIDTH, HEIGHT));
 
-    Coord[5] memory coords = [Coord(-6, -6), Coord(-5, -5), Coord(5, 5), Coord(10, 10), Coord(11, 11)];
-    CoordRect memory coordRect = CoordRect(Coord(-6, -6), Coord(10, 10));
+    Point[5] memory coords = [Point(-6, -6), Point(-5, -5), Point(5, 5), Point(10, 10), Point(11, 11)];
+    Rect memory coordRect = Rect(Point(-6, -6), Point(10, 10));
 
     for (uint256 i = 0; i < coords.length; i++) {
       PaintSystem(system(PaintSystemID)).executeTyped(coords[i]);
@@ -47,7 +46,7 @@ contract PaintRectSystemTest is MudTest {
     }
   }
 
-  function contains(CoordRect memory rect, Coord memory coord) internal pure returns (bool) {
+  function contains(Rect memory rect, Point memory coord) internal pure returns (bool) {
     return rect.min.x <= coord.x && coord.x < rect.max.x && rect.min.y <= coord.y && coord.y < rect.max.y;
   }
 }

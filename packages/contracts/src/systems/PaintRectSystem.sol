@@ -9,7 +9,7 @@ import "solecs/utils.sol";
 import { IndexerComponent, ID as IndexerComponentID } from "components/IndexerComponent.sol";
 import { ColorComponent, ID as ColorComponentID } from "components/ColorComponent.sol";
 import { ID as PositionComponentID } from "components/PositionComponent.sol";
-import { CoordRect, Coord, CoordIndexer } from "quadromud/CoordIndexer.sol";
+import { Rect, Point, CoordIndexer } from "quadromud/CoordIndexer.sol";
 
 uint256 constant ID = uint256(keccak256("system.PaintRect"));
 
@@ -17,11 +17,11 @@ contract PaintRectSystem is System {
   constructor(IWorld _world, address _components) System(_world, _components) {}
 
   function execute(bytes memory arguments) public returns (bytes memory) {
-    CoordRect memory rect = abi.decode(arguments, (CoordRect));
+    Rect memory rect = abi.decode(arguments, (Rect));
     ColorComponent colorComponent = ColorComponent(getAddressById(components, ColorComponentID));
     IndexerComponent indexerComponent = IndexerComponent(getAddressById(components, IndexerComponentID));
     CoordIndexer index = CoordIndexer(indexerComponent.getValue(PositionComponentID));
-    Coord[] memory coords = index.searchRect(rect);
+    Point[] memory coords = index.searchRect(rect);
 
     for (uint256 i = 0; i < coords.length; i++) {
       uint256[] memory entities = index.getEntitiesWithValue(abi.encode(coords[i]));
@@ -33,7 +33,7 @@ contract PaintRectSystem is System {
     }
   }
 
-  function executeTyped(CoordRect memory rect) public returns (bytes memory) {
+  function executeTyped(Rect memory rect) public returns (bytes memory) {
     return execute(abi.encode(rect));
   }
 }

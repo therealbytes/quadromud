@@ -3150,13 +3150,13 @@ qs@^6.9.6:
   dependencies:
     side-channel "^1.0.4"
 
-"quadromud@ssh://git@github.com/therealbytes/quadromud#acb480e3d3597c6f559329d26cefddd6c8f7f969":
+"quadromud@ssh://git@github.com/therealbytes/quadromud#002bd14763376211921dd458c2de82f590e998e1":
   version "0.0.1"
-  resolved "ssh://git@github.com/therealbytes/quadromud#acb480e3d3597c6f559329d26cefddd6c8f7f969"
+  resolved "ssh://git@github.com/therealbytes/quadromud#002bd14763376211921dd458c2de82f590e998e1"
 
-"quadrosol@ssh://git@github.com/therealbytes/quadrosol#664b34ff1593afd6df305deba808685396425b7f":
+"quadrosol@ssh://git@github.com/therealbytes/quadrosol#e1669a9c95402f59d344c6ac1f89a92897e7bb27":
   version "0.0.1"
-  resolved "ssh://git@github.com/therealbytes/quadrosol#664b34ff1593afd6df305deba808685396425b7f"
+  resolved "ssh://git@github.com/therealbytes/quadrosol#e1669a9c95402f59d344c6ac1f89a92897e7bb27"
 
 queue-microtask@^1.2.2:
   version "1.2.3"
