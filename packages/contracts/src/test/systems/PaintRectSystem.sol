@@ -8,7 +8,6 @@ import { WIDTH, HEIGHT } from "../../constants.sol";
 
 import { Point, Rect } from "quadromud/CoordIndexer.sol";
 
-import { InitSystem, ID as InitSystemID } from "systems/InitSystem.sol";
 import { PaintSystem, ID as PaintSystemID } from "systems/PaintSystem.sol";
 import { PaintRectSystem, ID as PaintRectSystemID } from "systems/PaintRectSystem.sol";
 import { ColorComponent, ID as ColorComponentID } from "components/ColorComponent.sol";
@@ -17,13 +16,7 @@ import { PositionComponent, ID as PositionComponentID } from "components/Positio
 contract PaintRectSystemTest is MudTest {
   constructor() MudTest(new Deploy()) {}
 
-  // function setUp() public override {
-  //   super.setUp();
-  //   InitSystem(system(InitSystemID)).executeTyped();
-  // }
-
   function testPaintRect() public {
-    InitSystem(system(InitSystemID)).executeTyped();
 
     Rect memory indexRect = Rect(Point(0, 0), Point(WIDTH, HEIGHT));
 

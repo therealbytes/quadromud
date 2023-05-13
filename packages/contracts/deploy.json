@@ -10,7 +10,8 @@
       "writeAccess": [
         "IndexerComponent",
         "PositionComponent"
-      ]
+      ],
+      "initialize": "new bytes(0)"
     },
     {
       "name": "PaintSystem",
