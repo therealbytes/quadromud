@@ -18,6 +18,7 @@ contract InitSystem is System {
   function execute(bytes memory arguments) public returns (bytes memory) {
     Rect memory rect = Rect(Point(0, 0), Point(WIDTH, HEIGHT));
     registerCoordIndexer(PositionComponentID, rect);
+    return new bytes(0);
   }
 
   function executeTyped() public returns (bytes memory) {

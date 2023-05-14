@@ -21,6 +21,7 @@ contract PaintSystem is System {
     uint256 entity = world.getUniqueEntityId();
     positionComponent.set(entity, coord);
     colorComponent.set(entity, 0x000000);
+    return new bytes(0);
   }
 
   function executeTyped(Point memory coord) public returns (bytes memory) {
