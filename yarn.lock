@@ -2961,10 +2961,6 @@ path@^0.12.7:
     process "^0.11.1"
     util "^0.10.3"
 
-"pclib@ssh://git@github.com/therealbytes/pclib#main":
-  version "0.0.0"
-  resolved "ssh://git@github.com/therealbytes/pclib#2f1b21b3130858ce7b0deb00d4dc50ad28c82061"
-
 picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"

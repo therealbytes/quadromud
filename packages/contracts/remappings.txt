@@ -10,6 +10,5 @@ solmate/=../../node_modules/@rari-capital/solmate/src/
 ds-test/=../../node_modules/ds-test/src/
 forge-std/=../../node_modules/forge-std/
 quadrosol/=../../node_modules/quadrosol/src/
-pclib/=../../node_modules/pclib/src/
 
 quadromud/=../quadromud/src/
