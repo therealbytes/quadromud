@@ -14,7 +14,10 @@
     "dev": "run-pty % yarn dev:client % yarn dev:contracts",
     "dev:client": "yarn workspace client run dev",
     "dev:node": "yarn workspace contracts run devnode",
-    "dev:contracts": "yarn workspace contracts run dev"
+    "dev:contracts": "yarn workspace contracts run dev",
+    "concrete:devnet": "yarn concrete:devnet:down && yarn concrete:devnet:up",
+    "concrete:devnet:up": "make -C optimism devnet-up",
+    "concrete:devnet:down": "make -C optimism devnet-down && make -C optimism devnet-clean"
   },
   "devDependencies": {
     "run-pty": "^4.0.3"
