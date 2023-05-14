@@ -1,6 +1,5 @@
-components/=./src/components
-systems/=./src/systems
-libraries/=./src/libraries
+components/=./src/ecs/
+systems/=./src/ecs/
 std-contracts/=../../node_modules/@latticexyz/std-contracts/src/
 solecs/=../../node_modules/@latticexyz/solecs/src/
 
@@ -11,5 +10,3 @@ ds-test/=../../node_modules/ds-test/src/
 forge-std/=../../node_modules/forge-std/
 quadrosol/=../../node_modules/quadrosol/src/
 pclib/=../../node_modules/pclib/src/
-
-quadromud/=../quadromud/src/

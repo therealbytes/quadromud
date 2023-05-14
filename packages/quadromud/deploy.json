@@ -1,0 +1,19 @@
+{
+  "components": [
+    "PositionComponent"
+  ],
+  "systems": [
+    {
+      "name": "InitSystem",
+      "writeAccess": [
+        "PositionComponent"
+      ]
+    },
+    {
+      "name": "ComponentDevSystem",
+      "writeAccess": [
+        "PositionComponent"
+      ]
+    }
+  ]
+}

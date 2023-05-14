@@ -1,0 +1,22 @@
+{
+  "name": "quadromud",
+  "license": "MIT",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "forge build",
+    "test": "mud test"
+  },
+  "devDependencies": {
+    "@latticexyz/cli": "1.33.1",
+    "@latticexyz/solecs": "1.33.1",
+    "@latticexyz/std-contracts": "1.33.1",
+    "@rari-capital/solmate": "^6.4.0",
+    "@solidstate/contracts": "^0.0.52",
+    "ds-test": "https://github.com/dapphub/ds-test.git#c7a36fb236f298e04edf28e2fee385b80f53945f",
+    "forge-std": "^1.1.2",
+    "memmove": "https://github.com/brockelmore/memmove.git",
+    "pclib": "ssh://git@github.com/therealbytes/pclib#main",
+    "quadrosol": "ssh://git@github.com/therealbytes/quadrosol#main"
+  }
+}

@@ -1,11 +1,13 @@
 {
-  "name": "amudproject",
+  "name": "quadromud-demo",
   "version": "1.0.0",
   "private": true,
+  "author": "bytes <therealbyt3s@gmail.com>",
   "license": "MIT",
   "workspaces": [
     "packages/contracts",
-    "packages/client"
+    "packages/client",
+    "packages/quadromud"
   ],
   "scripts": {
     "prepare": "yarn workspace contracts prepare",
