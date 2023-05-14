@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
-import {QuadTree, QuadTreeLib, Point, PointLib, PointsLib, Rect, RectLib} from "quadrosol/QuadTree.sol";
+import {Point, PointLib, PointsLib, Rect, RectLib} from "quadrosol/QuadTree.sol";
+import {QuadTree, QuadTreeLib} from "quadrosol/concrete/QuadTree.sol";
 import {IIndexRead} from "quadrosol/interfaces/IIndex.sol";
 
 import {_Component as Component} from "./Component.sol";
@@ -109,38 +110,10 @@ contract CoordIndexer is IEntityIndexer, IIndexRead {
         return component.getEntitiesWithValue(abi.encode(point)).length > 0;
     }
 
-    function _searchRect(Rect memory rect)
-        internal
-        view
-        returns (Point[] memory)
-    {
-        rect = tree.rect.overlap(rect);
-        if (rect.area() < 50) {
-            // Search set
-            uint256 count;
-            uint256 consCountGuess = (2 * tree.size() * rect.area()) /
-                tree.rect.area();
-            Point[] memory points = new Point[](consCountGuess);
-            for (int32 x = rect.min.x; x < rect.max.x; x++) {
-                for (int32 y = rect.min.y; y < rect.max.y; y++) {
-                    Point memory point = Point(x, y);
-                    if (_has(point)) {
-                        if (count == points.length) {
-                            points = points.expand();
-                        }
-                        points[count] = point;
-                        count++;
-                    }
-                }
-            }
-            assembly {
-                mstore(points, count)
-            }
-            return points;
-        } else {
-            // Search tree
-            return tree.searchRect(rect);
-        }
+    function _searchRect(
+        Rect memory rect
+    ) internal view returns (Point[] memory) {
+        return tree.searchRect(rect);
     }
 
     function _nearest(Point memory point)
