@@ -16,7 +16,7 @@
     "ds-test": "https://github.com/dapphub/ds-test.git#c7a36fb236f298e04edf28e2fee385b80f53945f",
     "forge-std": "^1.1.2",
     "memmove": "https://github.com/brockelmore/memmove.git",
-    "quadrosol": "ssh://git@github.com/therealbytes/quadrosol#concrete",
-    "pclib": "ssh://git@github.com/therealbytes/pclib#main"
+    "quadrosol": "ssh://git@github.com/therealbytes/quadrosol#d9086e7ea36270a329b080f0a5c361abd0b4492b",
+    "pclib": "ssh://git@github.com/therealbytes/pclib#2f1b21b3130858ce7b0deb00d4dc50ad28c82061"
   }
 }
