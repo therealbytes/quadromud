@@ -26,7 +26,7 @@ yarn concrete:devnet:down   # to stop and clean
 yarn dev                    # to run the demo
 ```
 
-Alternatively, you can run a normal Optimism Bedrock devnet with these changes:
+Alternatively, you can run a regular Optimism Bedrock devnet with these changes:
 - Checkout `cb19e2f9cf226a7ff429ffe7ca92148f3d1689f1` in the [Optimism monorepo](https://github.com/ethereum-optimism/optimism)
 - Replace the op-geth docker image in `Dockerfile.l2` with `ghcr.io/therealbytes/concrete-quad:v0.0.1`
 - Expose port `9546:8546` for WebSocket RPC
